@@ -72,7 +72,7 @@ cis<-list()
 for (i in 1:nparams){
     p<-unlist(bootpars[i,])
     p<-p[order(p)]
-    ##cis<-rbind(cis,c(p[2],p[99]))
+    ##cis<-rbind(cis,c(p[4],p[157]))
     ##cis<-rbind(cis,c(p[25],p[476]))
     cis<-rbind(cis,c(p[12],p[489]))
 }

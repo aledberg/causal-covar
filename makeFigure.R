@@ -14,6 +14,7 @@ library(ggplot2)
 library(grid)
 library(gridExtra)
 library(boot)
+library(latex2exp)
 
 source("loadInsarkData.R")
 
@@ -208,15 +209,15 @@ pl2<-ggplot(datcond,aes(x=weight,y=mk))+geom_point(size=2)+ylab("Mean (N)")+xlab
 ##################################################################################
 ## plot the conditional variances
 
-pl3<-ggplot(datcond,aes(x=weight,y=vh))+geom_point(size=2)+ylab("Variance (N^2)")+xlab("Weight (kg)")+geom_line(data=pred,size=dotsize,aes(y=vh,x=weight),linetype="dotted")+geom_errorbar(data=pred,aes(ymin=vhLowerBoot,ymax=vhUpperBoot),width=0.3)+theme(axis.text=element_text(size=atextsize),axis.title=element_text(size=textsize),strip.text.x=element_text(size=textsize),legend.text=element_text(size=textsize),legend.key.size=unit(16, "points"),legend.title=element_text(size=textsize),plot.margin = unit(c(msize,msize,msize,msize), "cm"),plot.title = element_text(hjust=hjust+hjust/6,size=titsize,face=fface))+ggtitle("C")+geom_text(x=xpos,y=8250,label="grip strength",check_overlap=FALSE,fontface=tface,size=tsize)+geom_line(data=pred13,size=dsize,aes(y=vh,x=weight),linetype="longdash")
+pl3<-ggplot(datcond,aes(x=weight,y=vh))+geom_point(size=2)+ylab(TeX("Covariance (N$^2$)"))+xlab("Weight (kg)")+geom_line(data=pred,size=dotsize,aes(y=vh,x=weight),linetype="dotted")+geom_errorbar(data=pred,aes(ymin=vhLowerBoot,ymax=vhUpperBoot),width=0.3)+theme(axis.text=element_text(size=atextsize),axis.title=element_text(size=textsize),strip.text.x=element_text(size=textsize),legend.text=element_text(size=textsize),legend.key.size=unit(16, "points"),legend.title=element_text(size=textsize),plot.margin = unit(c(msize,msize,msize,msize), "cm"),plot.title = element_text(hjust=hjust+hjust/6,size=titsize,face=fface))+ggtitle("C")+geom_text(x=xpos,y=8250,label="grip strength",check_overlap=FALSE,fontface=tface,size=tsize)+geom_line(data=pred13,size=dsize,aes(y=vh,x=weight),linetype="longdash")
 
-pl4<-ggplot(datcond,aes(x=weight,y=vk))+geom_point(size=2)+ylab("Variance (N^2)")+xlab("Weight (kg)")+geom_line(data=pred,size=dotsize,aes(y=vk,x=weight),linetype="dotted")+geom_errorbar(data=pred,aes(ymin=vkLowerBoot,ymax=vkUpperBoot),width=0.3)+theme(axis.text=element_text(size=atextsize),axis.title=element_text(size=textsize),strip.text.x=element_text(size=textsize),legend.text=element_text(size=textsize),legend.key.size=unit(16, "points"),legend.title=element_text(size=textsize),plot.margin = unit(c(msize,msize,msize,msize), "cm"),plot.title = element_text(hjust=hjust+hjust/5,size=titsize,face=fface))+ggtitle("D")+geom_text(x=xpos,y=13030,label="knee strength",check_overlap=FALSE,fontface=tface,size=tsize)+geom_line(data=pred13,size=dsize,aes(y=vk,x=weight),linetype="longdash")
+pl4<-ggplot(datcond,aes(x=weight,y=vk))+geom_point(size=2)+ylab(TeX("Covariance (N$^2$)"))+xlab("Weight (kg)")+geom_line(data=pred,size=dotsize,aes(y=vk,x=weight),linetype="dotted")+geom_errorbar(data=pred,aes(ymin=vkLowerBoot,ymax=vkUpperBoot),width=0.3)+theme(axis.text=element_text(size=atextsize),axis.title=element_text(size=textsize),strip.text.x=element_text(size=textsize),legend.text=element_text(size=textsize),legend.key.size=unit(16, "points"),legend.title=element_text(size=textsize),plot.margin = unit(c(msize,msize,msize,msize), "cm"),plot.title = element_text(hjust=hjust+hjust/5,size=titsize,face=fface))+ggtitle("D")+geom_text(x=xpos,y=13030,label="knee strength",check_overlap=FALSE,fontface=tface,size=tsize)+geom_line(data=pred13,size=dsize,aes(y=vk,x=weight),linetype="longdash")
 
 
 ##################################################################################
 ## plot the conditional co-variances
 
-pl5<-ggplot(datcond,aes(x=weight,y=cov))+geom_point(size=2)+ylab("Covariance (N^2)")+xlab("Weight (kg)")+geom_line(data=pred,size=dotsize,aes(y=cov,x=weight),linetype="dotted")+geom_errorbar(data=pred,aes(ymin=covLower,ymax=covUpper),width=0.3)+theme(axis.text=element_text(size=atextsize),axis.title=element_text(size=textsize),strip.text.x=element_text(size=textsize),legend.text=element_text(size=textsize),legend.key.size=unit(16, "points"),legend.title=element_text(size=textsize),plot.margin = unit(c(msize,msize,msize,msize), "cm"),plot.title = element_text(hjust=hjust/2,size=titsize,face=fface))+ggtitle("E")+geom_line(data=pred13,size=dsize,aes(y=cov,x=weight),linetype="longdash")
+pl5<-ggplot(datcond,aes(x=weight,y=cov))+geom_point(size=2)+ylab(TeX("Covariance (N$^2$)"))+xlab("Weight (kg)")+geom_line(data=pred,size=dotsize,aes(y=cov,x=weight),linetype="dotted")+geom_errorbar(data=pred,aes(ymin=covLower,ymax=covUpper),width=0.3)+theme(axis.text=element_text(size=atextsize),axis.title=element_text(size=textsize),strip.text.x=element_text(size=textsize),legend.text=element_text(size=textsize),legend.key.size=unit(16, "points"),legend.title=element_text(size=textsize),plot.margin = unit(c(msize,msize,msize,msize), "cm"),plot.title = element_text(hjust=hjust/2,size=titsize,face=fface))+ggtitle("E")+geom_line(data=pred13,size=dsize,aes(y=cov,x=weight),linetype="longdash")
 
 
 lay=rbind(c(1,2),c(3,4),c(5,5))
