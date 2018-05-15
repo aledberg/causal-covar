@@ -15,6 +15,7 @@ library(grid)
 library(gridExtra)
 library(boot)
 
+source("loadInsarkData.R")
 
 data<-data.table(data)
 

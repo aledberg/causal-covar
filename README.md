@@ -27,13 +27,15 @@ script (fitModelForPaper.R) and two files with initial values for the numerical 
 * bootstrapForPaper.R Contains code to do the bootstrap resampling needed to estimate the confidence intervals of parameter values.
 
 
-Example:
+
+
+**Example:**
 
 To generate Figure 4 do the following: 
 
 * clone the repository (git clone https://github.com/aledberg/causal-covar)
 
-* start up R in the cloned directory
+* start R in the cloned directory
 
 * at the R prompt execute source("makeFigure.R")
 
