@@ -2,7 +2,7 @@
 
 
 
-Data and R-code related to the causal covariability project. This project site is under construction.
+Data and R-code related to the mansucript _Confounding caused by causal-effect covariability_ available [here](https://arxiv.org/abs/1805.06035)
 
 ---
 
